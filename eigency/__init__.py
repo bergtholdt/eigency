@@ -1,8 +1,15 @@
 from pkg_resources import resource_filename
 import numpy as np
 import os.path
+import sys
 
-__eigen_dir__ = resource_filename(__name__, "eigen_3.2.8")
+
+# conda paths
+if sys.platform == 'win32':
+    __eigen_dir__ = os.path.abspath(os.__file__ + '\\..\\..\\Library\\include\\eigen3')
+else:
+    __eigen_dir__ = os.path.abspath(os.__file__ + '/../../../include/eigen3')
+assert os.path.isdir(__eigen_dir__)
 
 def get_includes(include_eigen=True):
     root = os.path.dirname(__file__)
