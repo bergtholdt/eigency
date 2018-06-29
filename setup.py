@@ -82,7 +82,7 @@ dist = setup(
         '*.h', '*.pxd', '*.pyx',
         #join(__eigen_lib_dir__, '*'),
     ]}, # + eigen_data_files},
-    exclude_package_data = {__package_name__: [join(__eigen_lib_dir__, 'CMakeLists.txt')]},
+    #exclude_package_data = {__package_name__: [join(__eigen_lib_dir__, 'CMakeLists.txt')]},
     #install_requires = ['numpy']
 )
 
