@@ -9,7 +9,7 @@ if sys.platform == 'win32':
     __eigen_dir__ = os.path.abspath(os.__file__ + '\\..\\..\\Library\\include\\eigen3')
 else:
     __eigen_dir__ = os.path.abspath(os.__file__ + '/../../../include/eigen3')
-assert os.path.isdir(__eigen_dir__)
+assert os.path.isdir(__eigen_dir__), __eigen_dir__
 
 def get_includes(include_eigen=True):
     root = os.path.dirname(__file__)
